@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreferenceCompat
+        android:key="notifications"
+        android:title="Enable message notifications" />
+
+    <Preference
+        android:key="feed_back"
+        android:summary="Report technical issues or suggest new features"
+        android:title="Send feedback" />
+
+    <!--PreferenceCategory进行相关类别的分类-->
+    <PreferenceCategory
+        android:key="user_profile"
+        android:title="User">
+        <SwitchPreferenceCompat
+            android:key="sex"
+            android:title="Man or Woman" />
+        <EditTextPreference
+            android:key="user_name"
+            android:title="UserName" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="help"
+        android:title="Help">
+        <SwitchPreferenceCompat
+            android:key="contact_us"
+            android:title="Contact" />
+    </PreferenceCategory>
+
+    <!--屏幕分割
+    PreferenceFragmentCompat.OnPreferenceStartFragmentCallback
+        .onPreferenceStartFragment()。
+    此方法应该用于显示新屏幕，且应在托管 Activity 中实现-->
+    <Preference
+        android:fragment="com.wdl.preferencedemo.VPNSetting"
+        android:key="vpn"
+        android:title="VPN" />
+
+    <Preference
+        android:key="launch"
+        android:title="Launch Activity">
+        <intent
+            android:targetClass="com.wdl.preferencedemo.LauncherActivity"
+            android:targetPackage="com.wdl.preferencedemo" />
+        <extra
+            android:name="extra_name"
+            android:value="12" />
+    </Preference>
+
+    <Preference
+        android:key="web"
+        android:title="Browser">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="http://www.baidu.com" />
+    </Preference>
+
+    <Preference
+        android:key="click"
+        android:title="Click" />
+
+</PreferenceScreen>

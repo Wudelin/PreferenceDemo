@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <SwitchPreferenceCompat
+        android:icon="@drawable/ic_autorenew_black_24dp"
+        android:key="vpn_state"
+        android:title="Toggle VPN" />
+
+    <!--通过isPreferenceVisible属性判断此偏好设置是否显示-->
+    <EditTextPreference
+        android:key="vpn_name"
+        android:title="input vpn name"
+        app:isPreferenceVisible="true" />
+
+    <!--useSimpleSummaryProvider 是否开启动态更新摘要-->
+    <ListPreference
+        android:entries="@array/enc_method_entry"
+        android:entryValues="@array/enc_method_value"
+        android:key="method"
+        android:title="Encrpy method"
+        app:useSimpleSummaryProvider="true" />
+
+
+    <EditTextPreference
+        android:key="vpn_port"
+        android:title="RemotePort" />
+
+
+</PreferenceScreen>
